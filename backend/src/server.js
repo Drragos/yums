@@ -13,6 +13,7 @@ app.get("/api/health", (req, res) => {
   res.status(200).json({ success: true });
 });
 
+// add favorite endpoint
 app.post("/api/favorites", async (req, res) => {
   try {
     const { userId, recipeId, title, image, cookTime, servings } = req.body;
@@ -40,6 +41,24 @@ app.post("/api/favorites", async (req, res) => {
   }
 });
 
+// fetch favorites endpoint
+app.get("/api/favorites/:userId", async (req, res) => {
+  try {
+    const { userId } = req.params;
+
+    const userFavorites = await db
+      .select()
+      .from(favoritesTable)
+      .where(eq(favoritesTable.userId, userId));
+
+    res.json(userFavorites);
+  } catch (error) {
+    console.log("Error fetching favorites:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+// delete favorite endpoint
 app.delete("/api/favorites/:userId/:recipeId", async (req, res) => {
   try {
     const { userId, recipeId } = req.params;
