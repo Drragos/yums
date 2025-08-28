@@ -98,8 +98,8 @@ const RecipeDetailScreen = () => {
             recipeId: parseInt(recipeId),
             title: recipe.title,
             image: recipe.image,
-            cookTime: recipe.cookTime,
-            servings: recipe.servings,
+            cookTime: parseInt(recipe.cookTime),
+            servings: parseInt(recipe.servings),
           }),
         });
 
