@@ -1,1 +1,1 @@
-export const API_URL = "https://yums-rxyw.onrender.com";
+export const API_URL = "https://yums-rxyw.onrender.com/api";
