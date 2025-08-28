@@ -13,10 +13,10 @@ import { homeStyles } from "../../assets/styles/home.styles";
 import { Image } from "expo-image";
 import { COLORS } from "../../constants/colors";
 import { Ionicons } from "@expo/vector-icons";
-import { CategoryFilter } from "../../components/CategoryFilter";
-import {RecipeCard} from "../../components/RecipeCard";
-import {LoadingSpinner} from "../../components/LoadingSpinner";
 import { useCallback } from "react";
+import CategoryFilter from "../../components/CategoryFilter";
+import RecipeCard from "../../components/RecipeCard";
+import LoadingSpinner from "../../components/LoadingSpinner";
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -110,7 +110,7 @@ const HomeScreen = () => {
         }
         contentContainerStyle={homeStyles.scrollContent}
       >
-        {/*  ANIMAL ICONS */}
+        {/*  FOOD ICONS */}
         <View style={homeStyles.welcomeSection}>
           <Image
             source={require("../../assets/images/doner.png")}
